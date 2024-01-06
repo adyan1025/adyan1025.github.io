@@ -17,8 +17,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background: rgb(36, 36, 36);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -97,9 +96,9 @@ sub {
   margin-top: 4vw;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-shadow: 10px 10px 10px black;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.772);
   border-radius: 5%;
-  background-color: #383535;
+  background-color: #313131;
   padding: 1%;
   font-size: 100%;
 }
@@ -148,6 +147,7 @@ sub {
   margin-left: 10vw;
   margin-right: 5vw;
   margin-bottom: 100px;
+  box-shadow: black 10px 10px 10px;
 }
 
 .resume_image:hover {
