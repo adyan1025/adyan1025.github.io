@@ -1,5 +1,5 @@
-import resume from './assets/resumee.png'
-import pdf from './assets/template-resume.pdf'
+import resume from './assets/resume.png'
+import pdf from './assets/resume.pdf'
 
 function Bottom_Box() {
     return (
