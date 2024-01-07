@@ -4,9 +4,9 @@ import pdf from './assets/resume.pdf'
 function Bottom_Box() {
     return (
         <div className="bottom_box">
-            <h1 className='resume_title'>Resume</h1>
+            <h1 className='resume_title'>Résumé</h1>
             <a href={pdf} target='_blank'><img src={resume} className='resume_image'></img></a>
-            <sub className='resume_description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolor atque. Adipisci perspiciatis iusto nemo consequatur culpa a incidunt delectus, debitis enim eveniet ab consequuntur? Atque beatae ratione blanditiis magni.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolor atque. Adipisci perspiciatis iusto nemo consequatur culpa a incidunt delectus, debitis enim eveniet ab consequuntur? Atque beatae ratione blanditiis magni.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolor atque. Adipisci perspiciatis iusto nemo consequatur culpa a incidunt delectus, debitis enim eveniet ab consequuntur? Atque beatae ratione blanditiis magni.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolor atque. Adipisci perspiciatis iusto nemo consequatur culpa a incidunt delectus, debitis enim eveniet ab consequuntur? Atque beatae ratione blanditiis magni.</sub>
+            <sub className='resume_description'>Check out my résumé! It details my experience, projects, certifications, and skills. If you would like to hire me or work together, please contact me at this email: chowdhuryadyan13@gmail.com. I look forward to working with you!</sub>
         </div>
     );
 }
