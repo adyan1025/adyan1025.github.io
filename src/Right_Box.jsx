@@ -11,7 +11,7 @@ function Right_Box() {
             />
             <Card
                 title={'Skills'}
-                body={<div>I am familiar with C, HTMl, CSS, Javascript and Python. I love learning and I am actively picking up new skills all the time.</div>}
+                body={<div>I am familiar with C, HTML, CSS, Javascript and Python. I love learning and I am actively picking up new skills all the time.</div>}
             />
             <Card
                 title={'Projects'}
