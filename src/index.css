@@ -67,6 +67,10 @@ sub {
   text-align: center;
 }
 
+.subtext {
+  font-size: 90%;
+}
+
 .name {
   margin: 0;
   font-size: 3.5em;
