@@ -80,7 +80,7 @@ function Right_Box() {
               </a>
               <br />
               <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:chowdhuryadyan13@gmail.com" className="links">
+              <a href="mailto:adyan.chowdhury@temple.edu" className="links">
                 {" "}
                 Email
               </a>
