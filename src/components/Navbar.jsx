@@ -1,17 +1,68 @@
-import '../styling/Navbar.css'
+import { useState, useRef, useEffect } from "react";
+import { FaCloud } from "react-icons/fa";
+import "../styling/Navbar.css";
 
 function Navbar() {
-    return(
+    const [active, setActive] = useState("home");
+    const [underlineStyle, setUnderlineStyle] = useState({});
+
+    const refs = {
+        home: useRef(null),
+        experience: useRef(null),
+        resume: useRef(null),
+        contact: useRef(null),
+    };
+
+    useEffect(() => {
+        const element = refs[active].current;
+
+        setUnderlineStyle({
+            width: `${element.offsetWidth}px`,
+            left: `${element.offsetLeft}px`,
+        });
+    }, [active]);
+
+    return (
         <nav>
             <div className="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#c4c4c4" d="M32 400C32 479.5 96.5 544 176 544L480 544C550.7 544 608 486.7 608 416C608 364.4 577.5 319.9 533.5 299.7C540.2 286.6 544 271.7 544 256C544 203 501 160 448 160C430.3 160 413.8 164.8 399.6 173.1C375.5 127.3 327.4 96 272 96C192.5 96 128 160.5 128 240C128 248 128.7 255.9 129.9 263.5C73 282.7 32 336.6 32 400z"/></svg>
-                <h3>adyan chowdhury</h3>    
+                <FaCloud />
+                <h3>adyan chowdhury</h3>
             </div>
-            <ul>
-                <li><h3>home</h3></li>
-                <li><h3>experience</h3></li>
-                <li><h3>resume</h3></li>
-                <li><h3>contact</h3></li>
+
+            <ul className="nav-links">
+                <li
+                    ref={refs.home}
+                    className={active === "home" ? "active" : "inactive"}
+                    onClick={() => setActive("home")}
+                >
+                    <h3>home</h3>
+                </li>
+
+                <li
+                    ref={refs.experience}
+                    className={active === "experience" ? "active" : "inactive"}
+                    onClick={() => setActive("experience")}
+                >
+                    <h3>experience</h3>
+                </li>
+
+                <li
+                    ref={refs.resume}
+                    className={active === "resume" ? "active" : "inactive"}
+                    onClick={() => setActive("resume")}
+                >
+                    <h3>resume</h3>
+                </li>
+
+                <li
+                    ref={refs.contact}
+                    className={active === "contact" ? "active" : "inactive"}
+                    onClick={() => setActive("contact")}
+                >
+                    <h3>contact</h3>
+                </li>
+
+                <div className="underline" style={underlineStyle}></div>
             </ul>
         </nav>
     );
