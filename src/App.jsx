@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>Adyan's Portfolio</h1>
+      <h1>adyan chowdhury</h1>
       <p>Coming soon.</p>
     </>
   );

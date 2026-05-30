@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  background-image: linear-gradient(to right, #151515, #201111); 
+  background-attachment: fixed;
+  background-size: cover;
+  color: #C4C4C4;
 }
