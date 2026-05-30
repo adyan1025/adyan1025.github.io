@@ -42,8 +42,6 @@ function TechCarousel() {
     <FaRedhat />,
     <FaGitAlt />,
     <FaDocker />,
-    <FaPauseCircle />,
-    <FaPlayCircle />,
     <SiPostgresql />,
     <SiTypescript />,
     <FaBootstrap />,
