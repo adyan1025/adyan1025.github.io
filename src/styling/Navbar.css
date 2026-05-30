@@ -1,5 +1,33 @@
-nav h2 {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+nav svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+nav .logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav .logo h3 {
+    background: linear-gradient(to right, #C4C4C4, #FF7373);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+nav ul {
+    display: flex;
     justify-content: right;
-    align-items: right;
-    color: red;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
 }

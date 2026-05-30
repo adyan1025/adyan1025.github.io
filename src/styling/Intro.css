@@ -1,5 +1,37 @@
-.intro h2 {
-    justify-content: right;
-    align-items: right;
-    color: orange;
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.intro .intro-text{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 2rem;
+}
+
+.intro .intro-text header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.intro .intro-text header .h1-with-underline h1 {
+    background: linear-gradient(to right, #C4C4C4, #FF7373);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.intro .intro-text header .h1-with-underline img {
+    width: 17rem;
+    margin-top: -1.25rem;
+}
+
+.intro .intro-text h3 {
+    width: 42.5rem;
 }
