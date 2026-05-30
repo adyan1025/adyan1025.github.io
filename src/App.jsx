@@ -2,6 +2,7 @@ import './styling/App.css'
 import Navbar from "./components/Navbar";
 import Intro from "./sections/Intro";
 import MouseFollower from './components/MouseFollower';
+import TechCarousel from './components/TechCarousel';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <MouseFollower />
       <Navbar />
       <Intro />
+      <TechCarousel />
     </>
   );
 }

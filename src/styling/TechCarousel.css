@@ -1,0 +1,110 @@
+.tech-stack-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tech-stack-header svg {
+    width: 1.5em;
+    height: 1.5rem;
+    color: #c4c4c4;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.tech-stack-header svg:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+.tech-stack-header svg:active {
+    color: rgb(95, 95, 95);
+    transform: scale(1.15);
+}
+
+.techstack {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 85%;
+  flex-direction: row;
+}
+
+.carousel-window {
+  overflow: hidden;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+
+.tech-icon {
+  min-width: 120px;
+  height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-icon svg {
+  width: 3.75rem;
+  height: 3.75rem;
+  color: #c4c4c4;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.tech-icon svg:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c4c4c4;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.arrow svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.arrow:hover {
+    color: #ffffff;
+    transform: scale(1.15);
+}
+
+.arrow:active {
+    color: rgb(95, 95, 95);
+    transform: scale(1.25);
+}
