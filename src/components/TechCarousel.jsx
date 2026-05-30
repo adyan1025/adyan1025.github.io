@@ -54,45 +54,57 @@ function TechCarousel() {
   const items = [...techStack, ...techStack];
 
   const [offset, setOffset] = useState(0);
-  const [speed, setSpeed] = useState(-0.5);
   const trackRef = useRef(null);
+  const [paused, setPaused] = useState(false);
+
+  const BASE_SPEED = -0.5;
+  const holdInterval = useRef(null);
+  const startHold = (direction) => {
+    if (holdInterval.current) return;
+
+    holdInterval.current = setInterval(() => {
+        setOffset((prev) => prev + direction);
+    }, 16);
+    };
+    const stopHold = () => {
+        clearInterval(holdInterval.current);
+        holdInterval.current = null;
+    };
 
   useEffect(() => {
     const interval = setInterval(() => {
         setOffset((prev) => {
-        const halfWidth =
-            (trackRef.current?.scrollWidth || 0) / 2;
+        const halfWidth = (trackRef.current?.scrollWidth || 0) / 2;
 
-        let next = prev + speed;
+        const currentSpeed = paused ? 0 : BASE_SPEED;
 
-        if (next <= -halfWidth) {
-            next = 0;
-        }
+        let next = prev + currentSpeed;
 
-        if (next > 0) {
-            next = -halfWidth;
-        }
+        if (next <= -halfWidth) next = 0;
+        if (next > 0) next = -halfWidth;
 
         return next;
         });
     }, 16);
 
     return () => clearInterval(interval);
-    }, [speed]);
+    }, [paused]);
 
   return (
     <div className="techstack">
         <header className="tech-stack-header">
             <h2>tech stack</h2>
-            <FaPauseCircle/>
+            <div onClick={() => setPaused((p) => !p)}>
+                {paused ? <FaPlayCircle /> : <FaPauseCircle />}
+            </div>
         </header>
         <div className="carousel-container">
             <button
                 className="arrow"
-                onMouseDown={() => setSpeed(2)}
-                onMouseUp={() => setSpeed(-0.5)}
-                onMouseLeave={() => setSpeed(-0.5)}
-            >
+                onMouseDown={() => startHold(2)}
+                onMouseUp={stopHold}
+                onMouseLeave={stopHold}
+                >
                 <svg viewBox="0 0 640 640">
                     <path
                     fill="currentColor"
@@ -119,9 +131,9 @@ function TechCarousel() {
 
             <button
                 className="arrow"
-                onMouseDown={() => setSpeed(-2)}
-                onMouseUp={() => setSpeed(-0.5)}
-                onMouseLeave={() => setSpeed(-0.5)}
+                onMouseDown={() => startHold(-2)}
+                onMouseUp={stopHold}
+                onMouseLeave={stopHold}
             >
                 <svg viewBox="0 0 640 640">
                     <path
