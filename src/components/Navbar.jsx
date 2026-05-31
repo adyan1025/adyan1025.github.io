@@ -43,33 +43,41 @@ function Navbar() {
                 <li
                     ref={refs.home}
                     className={active === "home" ? "active" : "inactive"}
-                    onClick={() => handleNavClick("home")}
+                    onClick={() => {
+                        handleNavClick("home");
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        });
+                    }}
                 >
                     <h3>home</h3>
                 </li>
 
-                <li
-                    ref={refs.experience}
-                    className={active === "experience" ? "active" : "inactive"}
-                    onClick={() => handleNavClick("experience")}
-                >
-                    <h3>experience</h3>
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/adyan-chowdhury/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>experience</h3>
+                    </a>
                 </li>
 
-                <li
-                    ref={refs.resume}
-                    className={active === "resume" ? "active" : "inactive"}
-                    onClick={() => handleNavClick("resume")}
-                >
-                    <h3>resume</h3>
+                <li>
+                    <a
+                        href={`${import.meta.env.BASE_URL}resume.pdf`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>resume</h3>
+                    </a>
                 </li>
 
-                <li
-                    ref={refs.contact}
-                    className={active === "contact" ? "active" : "inactive"}
-                    onClick={() => handleNavClick("contact")}
-                >
-                    <h3>contact</h3>
+                <li>
+                    <a href="mailto:ac@adyan.dev">
+                        <h3>contact</h3>
+                    </a>
                 </li>
 
                 <div className="underline" style={underlineStyle}></div>
