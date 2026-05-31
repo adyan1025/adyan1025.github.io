@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { FaCloud } from "react-icons/fa";
+import { FaCloud, FaBars } from "react-icons/fa";
 import "../styling/Navbar.css";
 
 function Navbar() {
     const [active, setActive] = useState("home");
     const [underlineStyle, setUnderlineStyle] = useState({});
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const refs = {
         home: useRef(null),
@@ -15,12 +16,18 @@ function Navbar() {
 
     useEffect(() => {
         const element = refs[active].current;
-
-        setUnderlineStyle({
-            width: `${element.offsetWidth}px`,
-            left: `${element.offsetLeft}px`,
-        });
+        if (element) {
+            setUnderlineStyle({
+                width: `${element.offsetWidth}px`,
+                left: `${element.offsetLeft}px`,
+            });
+        }
     }, [active]);
+
+    const handleNavClick = (section) => {
+        setActive(section);
+        setMobileMenuOpen(false);
+    };
 
     return (
         <nav>
@@ -28,12 +35,15 @@ function Navbar() {
                 <FaCloud />
                 <h3>adyan chowdhury</h3>
             </div>
+            <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                <FaBars />
+            </div>
 
-            <ul className="nav-links">
+            <ul className={`nav-links ${mobileMenuOpen ? "open" : ""}`}>
                 <li
                     ref={refs.home}
                     className={active === "home" ? "active" : "inactive"}
-                    onClick={() => setActive("home")}
+                    onClick={() => handleNavClick("home")}
                 >
                     <h3>home</h3>
                 </li>
@@ -41,7 +51,7 @@ function Navbar() {
                 <li
                     ref={refs.experience}
                     className={active === "experience" ? "active" : "inactive"}
-                    onClick={() => setActive("experience")}
+                    onClick={() => handleNavClick("experience")}
                 >
                     <h3>experience</h3>
                 </li>
@@ -49,7 +59,7 @@ function Navbar() {
                 <li
                     ref={refs.resume}
                     className={active === "resume" ? "active" : "inactive"}
-                    onClick={() => setActive("resume")}
+                    onClick={() => handleNavClick("resume")}
                 >
                     <h3>resume</h3>
                 </li>
@@ -57,7 +67,7 @@ function Navbar() {
                 <li
                     ref={refs.contact}
                     className={active === "contact" ? "active" : "inactive"}
-                    onClick={() => setActive("contact")}
+                    onClick={() => handleNavClick("contact")}
                 >
                     <h3>contact</h3>
                 </li>
