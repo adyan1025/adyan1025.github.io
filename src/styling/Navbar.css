@@ -7,6 +7,22 @@ nav {
     padding: 0 1rem;
 }
 
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .logo {
+        position: static;
+        margin-right: 0.5rem;
+    }
+    .hamburger {
+        position: static;
+        margin-left: 0.5rem;
+    }
+}
+
 .nav-links {
     position: relative;
     display: flex;
@@ -42,6 +58,7 @@ nav {
     }
     .hamburger {
         display: block;
+        margin-left: 0; 
     }
     .underline {
         display: none;
