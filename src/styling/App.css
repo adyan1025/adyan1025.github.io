@@ -2,3 +2,9 @@
     opacity: 0;
     animation-fill-mode: forwards;
 }
+
+@media (max-width: 768px) {
+  .mouse-follower {
+    display: none !important;
+  }
+}

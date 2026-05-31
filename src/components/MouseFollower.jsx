@@ -25,5 +25,5 @@ export default function MouseFollower() {
     transition: "transform 1s cubic-bezier(0.1, 0.76, 0.55, 0.94)"
   }), [position.x, position.y]);
 
-  return <div style={style} />;
+  return <div className="mouse-follower" style={style} />;
 }
