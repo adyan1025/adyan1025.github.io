@@ -2,11 +2,15 @@
   margin: 0;
   padding: 0 ;
   box-sizing: border-box;
-  
-  html, body {
-    background: linear-gradient(to right, #151515, #201111);
-    min-height: 100vh;
-  }
+}
+
+html, body, #root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+html {
+  background-color: #151515; 
 }
 
 #root {
