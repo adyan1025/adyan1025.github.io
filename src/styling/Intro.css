@@ -65,6 +65,7 @@
         display: flex;
         justify-content: center;
         margin-top: 0.5rem;
+        order: -1;
     }
     .intro .intro-image img {
         width: 90%;
