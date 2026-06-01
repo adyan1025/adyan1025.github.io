@@ -66,6 +66,16 @@ function Navbar() {
 
                 <li>
                     <a
+                        href="https://github.com/adyan1025"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>projects</h3>
+                    </a>
+                </li>
+
+                <li>
+                    <a
                         href={`${import.meta.env.BASE_URL}resume.pdf`}
                         target="_blank"
                         rel="noopener noreferrer"
