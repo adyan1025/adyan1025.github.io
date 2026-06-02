@@ -126,6 +126,7 @@ function TechCarousel() {
                 onMouseLeave={stopHold}
                 onTouchStart={(e) => { e.preventDefault(); startHold(2); }}
                 onTouchEnd={stopHold}
+                onContextMenu={(e) => e.preventDefault()}
                 >
                 <svg viewBox="0 0 640 640">
                     <path
@@ -163,6 +164,7 @@ function TechCarousel() {
                 onMouseLeave={stopHold}
                 onTouchStart={(e) => { e.preventDefault(); startHold(-2); }}
                 onTouchEnd={stopHold}
+                onContextMenu={(e) => e.preventDefault()}
             >
                 <svg viewBox="0 0 640 640">
                     <path
