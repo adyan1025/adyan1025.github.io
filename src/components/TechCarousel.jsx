@@ -58,6 +58,9 @@ function TechCarousel() {
   const BASE_SPEED = -0.5;
   const holdInterval = useRef(null);
   const touchStartX = useRef(null);
+  const mouseStartX = useRef(null);
+  const isDragging = useRef(false);
+  const [dragging, setDragging] = useState(false);
   const startHold = (direction) => {
     if (holdInterval.current) return;
 
@@ -89,6 +92,31 @@ function TechCarousel() {
 
   const handleTouchEnd = () => {
     touchStartX.current = null;
+  };
+
+  const handleMouseDown = (e) => {
+    mouseStartX.current = e.clientX;
+    isDragging.current = true;
+    setDragging(true);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current || mouseStartX.current === null) return;
+    const delta = e.clientX - mouseStartX.current;
+    mouseStartX.current = e.clientX;
+    setOffset((prev) => {
+      const halfWidth = (trackRef.current?.scrollWidth || 0) / 2;
+      let next = prev + delta;
+      if (next <= -halfWidth) next = 0;
+      if (next > 0) next = -halfWidth;
+      return next;
+    });
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    mouseStartX.current = null;
+    setDragging(false);
   };
 
   useEffect(() => {
@@ -138,9 +166,15 @@ function TechCarousel() {
 
             <div
                 className="carousel-window"
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+                onDragStart={(e) => e.preventDefault()}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
+                style={{ cursor: dragging ? "grabbing" : "grab" }}
             >
                 <div
                     ref={trackRef}
