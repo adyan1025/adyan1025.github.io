@@ -150,9 +150,9 @@ function TechCarousel() {
                     }}
                 >
                     {items.map((Icon, index) => (
-                    <div key={index} className="tech-icon">
-                        {Icon}
-                    </div>
+                        <div key={index} className="tech-icon">
+                            {Icon}
+                        </div>
                     ))}
                 </div>
             </div>
