@@ -85,6 +85,21 @@
   color: #ffffff;
 }
 
+@media (max-width: 768px) {
+  .carousel-track {
+    display: flex;
+    gap: 0.125rem;
+    width: max-content;
+  }
+
+  .tech-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #c4c4c4;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+}
+
 .arrow {
   background: none;
   border: none;
