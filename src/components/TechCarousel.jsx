@@ -57,6 +57,7 @@ function TechCarousel() {
 
   const BASE_SPEED = -0.5;
   const holdInterval = useRef(null);
+  const touchStartX = useRef(null);
   const startHold = (direction) => {
     if (holdInterval.current) return;
 
@@ -68,6 +69,27 @@ function TechCarousel() {
         clearInterval(holdInterval.current);
         holdInterval.current = null;
     };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartX.current === null) return;
+    const delta = e.touches[0].clientX - touchStartX.current;
+    touchStartX.current = e.touches[0].clientX;
+    setOffset((prev) => {
+      const halfWidth = (trackRef.current?.scrollWidth || 0) / 2;
+      let next = prev + delta;
+      if (next <= -halfWidth) next = 0;
+      if (next > 0) next = -halfWidth;
+      return next;
+    });
+  };
+
+  const handleTouchEnd = () => {
+    touchStartX.current = null;
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -113,7 +135,12 @@ function TechCarousel() {
                 </svg>
             </button>
 
-            <div className="carousel-window">
+            <div
+                className="carousel-window"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
                 <div
                     ref={trackRef}
                     className="carousel-track"
