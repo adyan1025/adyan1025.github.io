@@ -45,8 +45,7 @@ function Experience() {
         {timelineItems.map((item) => (
           <li
             key={item.id}
-            className={`timeline-item${activeId === item.id ? " active" : ""}`}
-            onClick={() => setActiveId(item.id === activeId ? null : item.id)}
+            className={`timeline-item`}
           >
             <div className="timeline-dot" />
             <div className="timeline-content">
