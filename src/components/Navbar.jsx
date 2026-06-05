@@ -54,14 +54,15 @@ function Navbar() {
                     <h3>home</h3>
                 </li>
 
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/adyan-chowdhury/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h3>experience</h3>
-                    </a>
+                <li
+                    ref={refs.experience}
+                    className={active === "experience" ? "active" : "inactive"}
+                    onClick={() => {
+                        handleNavClick("experience");
+                        document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                >
+                    <h3>experience</h3>
                 </li>
 
                 <li>

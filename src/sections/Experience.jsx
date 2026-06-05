@@ -36,7 +36,7 @@ function Experience() {
   const [activeId, setActiveId] = useState(null);
 
   return (
-    <div className="timeline-wrapper">
+    <div id="experience" className="timeline-wrapper">
       <header className="timeline-header">
         <h2>work experience</h2>
       </header>
