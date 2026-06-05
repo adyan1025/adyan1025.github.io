@@ -5,6 +5,9 @@ nav {
     flex-direction: row;
     position: sticky;
     padding: 0 1rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0 1rem;
 }
 
 @media (max-width: 768px) {
