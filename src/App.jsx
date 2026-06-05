@@ -8,6 +8,13 @@ import MouseFollower from "./components/MouseFollower";
 import TechCarousel from "./components/TechCarousel";
 import Experience from "./sections/Experience";
 
+const sectionAnimation = {
+  initial: { opacity: 0, y: 50 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.6 }
+};
+
 function App() {
   return (
     <>
@@ -17,7 +24,7 @@ function App() {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ position: 'sticky', top: 15, zIndex: 100 }}
+        style={{ position: "sticky", top: 15, zIndex: 100 }}
       >
         <Navbar />
       </motion.div>
@@ -30,19 +37,11 @@ function App() {
         <Intro />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
+      <motion.div {...sectionAnimation}>
         <TechCarousel />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
+      <motion.div {...sectionAnimation}>
         <Experience />
       </motion.div>
     </>
