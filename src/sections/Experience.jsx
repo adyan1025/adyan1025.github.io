@@ -7,7 +7,7 @@ function Experience() {
       id: 1,
       date: "Mar 2026 - Present",
       title: "cloud solution engineer intern",
-      description: "Develop & support efforts in SAP Cloud Infrastructure (SCI).",
+      description: "Designed and validated a high-availability reference architecture on SAP Cloud Infrastructure (SCI/OpenStack), including Pacemaker/Corosync clustering, STONITH fencing, and Kopia-based backup/restore to Ceph storage. Measured RTO/RPO under simulated failure scenarios to support 99.7% SLA validation for customer-facing private cloud environments.",
       tag: "SAP",
     },
     {
