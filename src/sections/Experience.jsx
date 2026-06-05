@@ -38,7 +38,7 @@ function Experience() {
   return (
     <div className="timeline-wrapper">
       <header className="timeline-header">
-        <h2>experience</h2>
+        <h2>work experience</h2>
       </header>
 
       <ul className="timeline-list">
@@ -55,7 +55,11 @@ function Experience() {
               {item.description && (
                 <p className="timeline-description">{item.description}</p>
               )}
-              {item.tag && <span className="timeline-tag">{item.tag}</span>}
+              {item.tag && (
+                <span className={`timeline-tag timeline-tag--${item.tag.toLowerCase().replace(/\s+/g, '-')}`}>
+                  {item.tag}
+                </span>
+              )}
             </div>
           </li>
         ))}
