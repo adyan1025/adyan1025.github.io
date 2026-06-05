@@ -28,9 +28,23 @@ function Experience() {
       id: 4,
       date: "Jul 2024 - Jun 2025",
       title: "undergraduate researcher",
-      description: "Built a Python automation tool to retrieve and process 600+ online posts, created an R script with 65% interrater reliability, and designed 5 data visualizations using Vega-Altair. Published at SIGCSE 2026.",
+      description: (
+        <>
+          Built a Python automation tool to retrieve and process 600+ online posts,
+          created an R script with 65% interrater reliability, and designed 5 data
+          visualizations using Vega-Altair. Published at SIGCSE 2026:{" "}
+          <a
+            href="https://dl.acm.org/doi/10.1145/3770762.3772651"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Navigating Computing Careers: TikTok's Potential Role as an Informal Resource
+          </a>
+          .
+        </>
+      ),
       tag: "Temple HCI Lab",
-    },
+    }
   ];
 
   const [activeId, setActiveId] = useState(null);

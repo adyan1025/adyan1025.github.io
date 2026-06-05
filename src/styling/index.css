@@ -59,6 +59,25 @@ p {
   font-weight: normal;
 }
 
+a {
+  color: #ff9292;
+  text-decoration: none;
+  background-image: linear-gradient(to right, #C4C4C4, #FF7373);
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  transition: color 0.2s ease, background-size 0.25s ease;
+}
+
+a:hover {
+  color: #FF7373;
+  background-size: 100% 1px;
+}
+
+a:visited {
+  color: #C4C4C4;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -86,4 +105,5 @@ p {
   h3 { font-size: 1rem; }
   h4 { font-size: 0.875rem; }
   p  { font-size: 0.75rem; }
+  a  { font-size: 0.75rem; }
 }
