@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "../styling/Experience.css";
 
+import SAP_Logo from "../assets/sap-logo.png";
+import HCI_Logo from "../assets/hci-logo.png";
+import D4G_Logo from "../assets/d4g-logo.png";
+
 function Experience() {
   const timelineItems = [
     {
@@ -9,6 +13,7 @@ function Experience() {
       title: "cloud solution engineer intern",
       description: "Develop & support efforts in SAP Cloud Infrastructure (SCI).",
       tag: "SAP",
+      logo: SAP_Logo
     },
     {
       id: 2,
@@ -16,6 +21,7 @@ function Experience() {
       title: "software engineer intern",
       description: "Center of expertise in data management; built an AI agent with RAG application and vector engine as an internal tool to visualize data volume management reports.",
       tag: "SAP",
+      logo: SAP_Logo
     },
     {
       id: 3,
@@ -23,6 +29,7 @@ function Experience() {
       title: "web developer",
       description: "Prototyped and developed an interactive website for a nonprofit client.",
       tag: "Develop for Good",
+      logo: D4G_Logo
     },
     {
       id: 4,
@@ -30,6 +37,7 @@ function Experience() {
       title: "undergraduate researcher",
       description: "Built a Python automation tool to retrieve and process 600+ online posts, created an R script with 65% interrater reliability, and designed 5 data visualizations using Vega-Altair. Published at SIGCSE 2026.",
       tag: "Temple HCI Lab",
+      logo: HCI_Logo
     },
   ];
 
@@ -56,6 +64,7 @@ function Experience() {
                 <p className="timeline-description">{item.description}</p>
               )}
               {item.tag && <span className="timeline-tag">{item.tag}</span>}
+              {item.logo && <img src={item.logo}></img>}
             </div>
           </li>
         ))}
