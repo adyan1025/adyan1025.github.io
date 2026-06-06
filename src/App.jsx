@@ -41,9 +41,9 @@ function App() {
         <TechCarousel />
       </motion.div>
 
-      <motion.div {...sectionAnimation}>
+      <div>
         <Experience />
-      </motion.div>
+      </div>
     </>
   );
 }

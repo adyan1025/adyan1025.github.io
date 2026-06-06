@@ -1,7 +1,15 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "../styling/Experience.css";
 
 function Experience() {
+
+const sectionAnimation = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.6 }
+};
   const timelineItems = [
     {
       id: 1,
@@ -57,9 +65,9 @@ function Experience() {
 
       <ul className="timeline-list">
         {timelineItems.map((item) => (
-          <li
+          <motion.li
             key={item.id}
-            className={`timeline-item`}
+            className={`timeline-item`} {...sectionAnimation}
           >
             <div className="timeline-dot" />
             <div className="timeline-content">
@@ -74,7 +82,7 @@ function Experience() {
                 </span>
               )}
             </div>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>
