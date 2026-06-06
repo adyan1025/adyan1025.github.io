@@ -7,6 +7,7 @@ import Intro from "./sections/Intro";
 import MouseFollower from "./components/MouseFollower";
 import TechCarousel from "./components/TechCarousel";
 import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
 
 const sectionAnimation = {
   initial: { opacity: 0, y: 50 },
@@ -43,6 +44,9 @@ function App() {
 
       <div>
         <Experience />
+      </div>
+      <div>
+        <Projects />
       </div>
     </>
   );
